@@ -11,12 +11,9 @@ use Perinci::CmdLine::Any;
 
 my $prefix = '/App/isbn/';
 my $cli = Perinci::CmdLine::Any->new(
-    url => $prefix,
+    url => "${prefix}isbn",
     log => 1,
     log_level => 'info',
-    subcommands => {
-        'drivers' => "${prefix}drivers",
-    },
 );
 $cli->run;
 
