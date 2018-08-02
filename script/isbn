@@ -22,6 +22,22 @@ $cli->run;
 
 =head1 SYNOPSIS
 
+List installed drivers:
+
+ % isbn -l
+
+List all available drivers:
+
+ % isbn -L
+
+Search an ISBN using all installed drivers:
+
+ % isbn 1860499058
+
+Search an ISBN using specified driver(s):
+
+ % isbn 1860499058 -d AmazonDE -d OpenLibrary -d Blackwell
+
 
 =head1 SEE ALSO
 
