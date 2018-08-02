@@ -1,0 +1,32 @@
+#!perl
+
+# DATE
+# VERSION
+
+use 5.010001;
+use strict;
+use warnings;
+
+use Perinci::CmdLine::Any;
+
+my $prefix = '/App/isbn/';
+my $cli = Perinci::CmdLine::Any->new(
+    url => $prefix,
+    log => 1,
+    log_level => 'info',
+    subcommands => {
+        'drivers' => "${prefix}drivers",
+    },
+);
+$cli->run;
+
+# ABSTRACT: Query book information by ISBN
+# PODNAME:
+
+=head1 SYNOPSIS
+
+
+=head1 SEE ALSO
+
+L<WWW::Scraper::ISBN> and its various driver modules
+C<WWW::Scraper::ISBN::*_Driver>.
