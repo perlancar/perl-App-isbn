@@ -103,7 +103,7 @@ sub isbn {
                 my $book = $rec->book;
                 for my $k (keys %$book) {
                     next if $k =~ /^(html)$/;
-                    $res->[2]{"${driver}_$k"} = "$book->{$k}";
+                    $res->[2]{"${driver}_$k"} = "" . ($book->{$k} // '');
                 }
             } else {
                 log_info "Couldn't find ISBN %s using driver %s", $isbn, $driver;
