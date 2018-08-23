@@ -51,7 +51,7 @@ _
             },
         },
         isbn => {
-            schema => 'str*',
+            schema => 'isbn*',
             pos => 0,
         },
         drivers => {
@@ -91,7 +91,7 @@ sub isbn {
         require WWW::Scraper::ISBN;
 
         my $isbn = $args{isbn} or return [400, "Please specify ISBN"];
-        $isbn =~ s/[^0-9Xx]//g;
+        # $isbn =~ s/[^0-9Xx]//g; # already by schema
         my $drivers = $args{drivers} // _installed_drivers();
         my $res = [200, "OK", {}];
         for my $driver (@$drivers) {
