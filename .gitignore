@@ -2,3 +2,4 @@ App-isbn-*
 .build
 *~
 nytprof*
+.DS_Store
